@@ -1,9 +1,15 @@
 #include <iostream>
+#include "mylib.h"
 
 using namespace std;
 
+int non_called_function(int i) {
+  return i+1;
+}
+
 int main(int argc, char* argv[]) {
   int num = argc - 1;
+  returnsZero();
 
   if (num == 0) {
     cout << "No arguments provided\n";
