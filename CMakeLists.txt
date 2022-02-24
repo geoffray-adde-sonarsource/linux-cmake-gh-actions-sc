@@ -18,13 +18,13 @@ add_executable(test src/test.cpp src/mylib.cpp)
 add_custom_target(coverage_dir ALL
     COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_BINARY_DIR}/coverage)
 
-# run test executable
+# run test executable to generate .gcno and .gcda files
 add_custom_target(run_test ALL
                   COMMAND $<TARGET_FILE:test>
                   DEPENDS sonar_scanner_example coverage_dir
                   )
 
-# run gcov
+# run gcov to generate report
 add_custom_target(compute_coverage ALL
                   COMMAND gcov -o ${CMAKE_BINARY_DIR}/CMakeFiles/test.dir/src ${PROJECT_SOURCE_DIR}/src/*.cpp
                   DEPENDS run_test

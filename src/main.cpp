@@ -3,10 +3,6 @@
 
 using namespace std;
 
-int non_called_function(int i) {
-  return i+1;
-}
-
 int main(int argc, char* argv[]) {
   int num = argc - 1;
   returnsZero();
