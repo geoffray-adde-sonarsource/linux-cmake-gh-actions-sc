@@ -26,7 +26,7 @@ add_custom_target(run_test ALL
 
 # run gcov
 add_custom_target(compute_coverage ALL
-                  COMMAND gcov -o ${CMAKE_BINARY_DIR}/CMakeFiles/test.dir/src ${PROJECT_SOURCE_DIR}/src/test.cpp
+                  COMMAND gcov -o ${CMAKE_BINARY_DIR}/CMakeFiles/test.dir/src ${PROJECT_SOURCE_DIR}/src/*.cpp
                   DEPENDS run_test
                   WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/coverage
                   )
